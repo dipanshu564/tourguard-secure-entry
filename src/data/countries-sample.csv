@@ -1,0 +1,21 @@
+code,name,dialCode,flag
+US,United States,+1,🇺🇸
+GB,United Kingdom,+44,🇬🇧
+IN,India,+91,🇮🇳
+AU,Australia,+61,🇦🇺
+DE,Germany,+49,🇩🇪
+FR,France,+33,🇫🇷
+CA,Canada,+1,🇨🇦
+JP,Japan,+81,🇯🇵
+BR,Brazil,+55,🇧🇷
+IT,Italy,+39,🇮🇹
+ES,Spain,+34,🇪🇸
+NL,Netherlands,+31,🇳🇱
+SE,Sweden,+46,🇸🇪
+CH,Switzerland,+41,🇨🇭
+SG,Singapore,+65,🇸🇬
+HK,Hong Kong,+852,🇭🇰
+KR,South Korea,+82,🇰🇷
+MX,Mexico,+52,🇲🇽
+AR,Argentina,+54,🇦🇷
+ZA,South Africa,+27,🇿🇦

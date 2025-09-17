@@ -1,0 +1,109 @@
+{
+  "tourguard_component_hierarchy": {
+    "name": "TourGuard Authentication System",
+    "description": "3D glassmorphism login/signup page for global travel safety app",
+    "main_components": [
+      {
+        "component": "LoginPage",
+        "file": "src/pages/Login.tsx",
+        "description": "Main authentication page with 3D hero and glassmorphism design",
+        "children": [
+          {
+            "component": "GlassmorphismCard",
+            "file": "src/components/ui/glassmorphism-card.tsx", 
+            "description": "3D tiltable card with mouse tracking and backdrop blur",
+            "props": ["children", "enableTilt", "className"],
+            "states": ["default", "tilted", "mobile"]
+          },
+          {
+            "component": "CountrySelector",
+            "file": "src/components/ui/country-selector.tsx",
+            "description": "Dropdown with flag, country name, and E.164 dialing code",
+            "props": ["value", "onCountryChange", "defaultCountry", "className"],
+            "states": ["default", "open", "focused", "disabled", "error"],
+            "dependencies": ["Command", "Popover", "Button"]
+          },
+          {
+            "component": "PhoneInput", 
+            "file": "src/components/ui/phone-input.tsx",
+            "description": "Phone number input with country-specific validation",
+            "props": ["country", "onPhoneChange", "value", "className", "placeholder"],
+            "states": ["default", "focused", "error", "success", "disabled"],
+            "validation": "Country-specific regex patterns for phone formats"
+          },
+          {
+            "component": "DigitalIdInput",
+            "file": "src/components/ui/digital-id-input.tsx", 
+            "description": "Conditional digital ID input (hidden for India)",
+            "props": ["country", "onIdChange", "value", "className"],
+            "states": ["default", "focused", "hidden", "error"],
+            "conditional": "Hidden when country code === 'IN'"
+          }
+        ]
+      }
+    ],
+    "design_system": {
+      "colors": {
+        "primary": "hsl(218 87% 32%) - Deep Blue #0B3D91",
+        "accent": "hsl(180 84% 45%) - Sophisticated Teal", 
+        "gradients": [
+          "gradient-hero: Dark space background with blue/teal accents",
+          "gradient-card: Glassmorphism card background",
+          "gradient-accent: Teal accent gradient",
+          "gradient-primary: Primary blue gradient"
+        ]
+      },
+      "effects": {
+        "glassmorphism": "backdrop-blur with semi-transparent backgrounds",
+        "3d_tilt": "Mouse-tracked perspective transforms on cards",
+        "animations": [
+          "spin-globe: 20s infinite rotation for hero globe",
+          "float: 3s up-down floating animation",
+          "glow-pulse: 2s opacity pulse for glowing elements",
+          "tilt-enter: 0.3s card tilt animation"
+        ]
+      },
+      "shadows": [
+        "shadow-glass: Glassmorphism card shadows",
+        "shadow-glow-accent: Teal glow effects", 
+        "shadow-glow-primary: Blue glow effects"
+      ]
+    },
+    "data_structures": [
+      {
+        "name": "CountryData",
+        "file": "src/lib/countries-data.ts",
+        "fields": ["code", "name", "dialCode", "flag"],
+        "sample_size": "20 countries",
+        "expansion_guide": "Full ISO E.164 list via libphonenumber-js"
+      },
+      {
+        "name": "ValidationRules", 
+        "file": "src/lib/tourguard-spec.ts",
+        "includes": ["phoneRegexPatterns", "digitalIdFormats", "errorMessages"]
+      }
+    ],
+    "accessibility_features": [
+      "Keyboard navigation support",
+      "Screen reader labels (aria-label, aria-describedby)", 
+      "High contrast mode compatibility",
+      "Focus indicators on all interactive elements",
+      "Reduced motion respect for animations",
+      "Semantic HTML structure"
+    ],
+    "responsive_breakpoints": {
+      "mobile": "320px - Single column layout",
+      "tablet": "768px - Stacked layout", 
+      "desktop": "1024px - Two column with hero globe",
+      "large": "1440px - Optimized spacing"
+    },
+    "micro_interactions": [
+      "Button hover effects with scale and glow",
+      "Input focus rings with accent colors",
+      "Card tilt on mouse movement (desktop only)",
+      "Toast notifications for OTP status",
+      "Loading states with spinners",
+      "Validation feedback (success/error states)"
+    ]
+  }
+}

@@ -2,41 +2,81 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* TourGuard Design System - 3D Glassmorphism Travel Safety App */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* TourGuard Color Palette */
+    --background: 220 28% 8%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Glassmorphism Card System */
+    --card: 218 87% 32% / 0.1;
+    --card-glass: 0 0% 100% / 0.05;
+    --card-border: 0 0% 100% / 0.1;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 28% 8%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
+    /* TourGuard Brand Colors */
+    --primary: 218 87% 32%; /* Deep Blue #0B3D91 */
     --primary-foreground: 210 40% 98%;
+    --primary-glow: 218 87% 45%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Teal Accent System */
+    --accent: 180 84% 45%; /* Sophisticated Teal */
+    --accent-foreground: 220 28% 8%;
+    --accent-glow: 180 84% 55%;
+    --accent-soft: 180 84% 45% / 0.1;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --secondary: 220 28% 12%;
+    --secondary-foreground: 210 40% 98%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 220 28% 15%;
+    --muted-foreground: 215 20% 65%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Glass UI Elements */
+    --border: 0 0% 100% / 0.08;
+    --input: 0 0% 100% / 0.05;
+    --input-border: 0 0% 100% / 0.1;
+    --ring: 180 84% 45%;
 
-    --radius: 0.5rem;
+    /* Advanced Design Tokens */
+    --gradient-hero: linear-gradient(135deg, 
+      hsl(220 28% 8%), 
+      hsl(218 87% 15%), 
+      hsl(180 84% 8%));
+    
+    --gradient-card: linear-gradient(135deg,
+      hsl(0 0% 100% / 0.05),
+      hsl(0 0% 100% / 0.02));
+    
+    --gradient-accent: linear-gradient(135deg,
+      hsl(180 84% 45%),
+      hsl(180 94% 55%));
+    
+    --gradient-primary: linear-gradient(135deg,
+      hsl(218 87% 32%),
+      hsl(218 87% 42%));
+
+    /* Glassmorphism Shadows */
+    --shadow-glass: 0 8px 32px hsl(0 0% 0% / 0.3),
+                    inset 0 1px 0 hsl(0 0% 100% / 0.1);
+    
+    --shadow-card: 0 25px 50px -12px hsl(0 0% 0% / 0.4);
+    
+    --shadow-glow-primary: 0 0 30px hsl(218 87% 32% / 0.3);
+    --shadow-glow-accent: 0 0 30px hsl(180 84% 45% / 0.3);
+
+    /* 3D Transform Effects */
+    --transform-tilt: perspective(1000px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+    
+    --radius: 1rem;
+    --radius-lg: 1.5rem;
 
     --sidebar-background: 0 0% 98%;
 
