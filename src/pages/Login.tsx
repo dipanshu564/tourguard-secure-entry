@@ -59,6 +59,11 @@ export default function Login() {
         className: "border-accent bg-accent-soft text-foreground",
       });
       
+      // Redirect to trip details after successful OTP
+      setTimeout(() => {
+        window.location.href = '/trip-details';
+      }, 2000);
+      
     } catch (error) {
       toast({
         title: "Failed to Send OTP",
